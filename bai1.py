@@ -19,28 +19,28 @@ def tinh_toan(phep_tinh):
     except Exception as e:
         ket_qua.set("Lỗi")
 
-root = tk.Tk()
-root.title("Máy Tính")
+window = tk.Tk()
+window.title("Máy Tính")
 
 # Biến lưu trữ kết quả
 ket_qua = tk.StringVar()
 
 # Định nghĩa và đặt các widget bằng grid
-tk.Label(root, text="Số thứ nhất:").grid(row=0, column=0, sticky="w", padx=5, pady=5)
-so_nhap1 = tk.Entry(root)
+tk.Label(window, text="Số thứ nhất:").grid(row=0, column=0, sticky="w", padx=5, pady=5)
+so_nhap1 = tk.Entry(window)
 so_nhap1.grid(row=0, column=1, padx=5, pady=5)
 
-tk.Label(root, text="Số thứ hai:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
-so_nhap2 = tk.Entry(root)
+tk.Label(window, text="Số thứ hai:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
+so_nhap2 = tk.Entry(window)
 so_nhap2.grid(row=1, column=1, padx=5, pady=5)
 
-tk.Button(root, text="Cộng", command=lambda: tinh_toan('cong')).grid(row=2, column=0, sticky="w", padx=5, pady=5)
-tk.Button(root, text="Trừ", command=lambda: tinh_toan('tru')).grid(row=2, column=1, sticky="w", padx=5, pady=5)
-tk.Button(root, text="Nhân", command=lambda: tinh_toan('nhan')).grid(row=3, column=0, sticky="w", padx=5, pady=5)
-tk.Button(root, text="Chia", command=lambda: tinh_toan('chia')).grid(row=3, column=1, sticky="w", padx=5, pady=5)
-tk.Button(root, text="Căn Bậc Hai", command=lambda: tinh_toan('sqrt')).grid(row=4, column=0, sticky="w", padx=5, pady=5)
+tk.Button(window, text="Cộng", command=lambda: tinh_toan('cong')). grid(row=3, column=0, sticky="w", padx=5, pady=5)
+tk.Button(window, text="Trừ", command=lambda: tinh_toan ('tru' )). grid(row=3, column=1, sticky="w", padx=5, pady=5)
+tk.Button(window, text="Căn Bậc Hai", command=lambda: tinh_toan('sqrt')).grid (row=3, column=2, sticky="w", padx=5, pady=5)
+tk.Button(window, text="Nhân", command=lambda: tinh_toan('nhan')). grid(row=3, column=3, sticky="w", padx=5, pady=5)
+tk.Button(window, text="Chia", command=lambda: tinh_toan('chia')). grid(row=3, column=4, sticky="w", padx=5, pady=5)
 
-tk.Label(root, text="Kết quả:").grid(row=5, column=0, sticky="w", padx=5, pady=5)
-tk.Label(root, textvariable=ket_qua).grid(row=5, column=1, sticky="w", padx=5, pady=5)
+tk.Label(window, text="Kết quả:").grid(row=2, column=0, sticky="w", padx=5, pady=5)
+tk.Label(window, textvariable=ket_qua).grid(row=2, column=1, sticky="w", padx=5, pady=5)
 
-root.mainloop()
+window.mainloop()
